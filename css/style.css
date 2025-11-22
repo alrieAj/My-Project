@@ -10,11 +10,6 @@ html {
     scroll-padding-top: 160px;
 }
 
-.nav-links a.active {
-    color: #ffffff;
-    font-weight: bold;
-}
-
 /* Navbar Styles */
 .nav-header {
     position: fixed;
@@ -56,12 +51,14 @@ html {
     transform: scale(1.1);
 }
 
-/* Navigation Links Container */
+/* Navigation Links Container (Desktop) */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2rem;  
+    gap: 2rem; 
     margin-left: auto; 
+    /* Ensure transition only applies to properties we want */
+    transition: transform 0.3s ease-in-out; 
 }
 
 /* Links list */
@@ -82,10 +79,43 @@ html {
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active { /* 'active' class used by JS */
     color: #0cff29;
 }
 
+
+/* --- NEW: Hamburger Menu Styles --- */
+
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it is above the menu links */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Hamburger transition to X */
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
 
 /* --- Video Background --- */
 .bg-video {
@@ -324,7 +354,51 @@ html {
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
+/* --- MEDIA QUERY FOR MOBILE (768px and below) --- */
 @media (max-width: 768px) {
+    
+    /* Display the hamburger icon on mobile */
+    .menu-toggle {
+        display: flex;
+        margin-left: auto; /* Push it to the right */
+    }
+
+    /* Collapse/Hide the desktop navigation menu */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px; 
+        background-color: rgba(0, 0, 0, 0.98); 
+        transform: translateX(100%); /* Start off-screen */
+        z-index: 999; /* Below the menu-toggle */
+        padding-top: 100px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* When the menu is toggled open by JS */
+    .nav-links.active {
+        transform: translateX(0); /* Slide into view */
+    }
+
+    /* Adjust the navigation list for vertical stacking */
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+        margin: 0;
+        padding: 20px 40px;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
+    }
+
+    /* Home Section adjustments */
     .home-section {
         flex-direction: column;
         padding: 100px 15px 40px;
