@@ -195,83 +195,31 @@ html {
     overflow: hidden; 
     padding: 100px 15px 40px 15px; 
     background: transparent; 
-    gap: 100px; 
+    gap: 150px;
 }
 
-.text-content {
+.text-content,
+.image-content {
     color: white;  
     flex-shrink: 0;
-    max-width: 650px; 
 }
 
-/* FIX 1: Make H1 stay on one line */
-.text-content h1 {
-    font-size: clamp(40px, 8vw, 100px);
-    white-space: nowrap; /* Forces H1 to stay on a single line */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 5px; 
-}
-
-/* FIX 2: H2 is the container for the 2nd and 3rd lines */
-.text-content h2 {
-    font-size: clamp(20px, 4vw, 45px);
-    margin-top: 0; 
-    display: block; /* Ensures h2 behaves like a block element */
-}
-
-.static-h2-text {
-    display: block; 
-    margin-bottom: 10px; 
-}
-
-.changing-text {
-    display: inline-block; 
-    position: relative; 
-    overflow: hidden;
-    color: #0cff29; /* Highlight color */
-    
-    /* Key Fixes for preventing clipping: */
-    height: 1.2em; /* Must be the height of one line */
-    line-height: 1.2; 
-    min-width: 250px; /* GUARANTEES "Developer" fits (Adjust higher if needed) */
-    
-    vertical-align: middle; 
-    margin-left: 0; /* Remove previous spacing */
-}
-
-/* The rest of the animation CSS (keyframes and .changing-text-word) is correct: */
-
-@keyframes text-reveal {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    10% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    90% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-}
-
-.changing-text-word {
-    display: block;
-    animation: text-reveal 6s infinite;  
-    position: absolute; 
-    top: 0;
-    left: 0;
+/* Home Section Text Content */
+.text-content {
+    max-width: 600px;
 }
 
 /* Style for intro paragraph to control width without <br> */
 .text-content .intro-paragraph {
     max-width: 500px; 
+}
+
+.text-content h1 {
+    font-size: clamp(40px, 10vw, 100px); 
+}
+
+.text-content h2 {
+    font-size: clamp(20px, 5vw, 45px);
 }
 
 .text-content p {
@@ -288,39 +236,16 @@ html {
     align-items: center;
     width: 420px;
     height: 420px;
-    flex-shrink: 0;
-    /* --- GLOW ADDITION START: Base Glow & Transition for Wrapper --- */
-    box-shadow: 0 0 15px rgba(12, 255, 41, 0.4); 
-    border-radius: 50%; 
-    transition: box-shadow 0.4s ease-in-out; 
-    /* --- GLOW ADDITION END --- */
 }
 
 .image-content img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* This style is key to the circle shape */
     border-radius: 50%;
-    /* --- GLOW ADDITION START: Base Glow & Transition for Image --- */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    transition: box-shadow 0.4s ease-in-out, transform 0.3s ease-in-out;
-    /* --- GLOW ADDITION END --- */
+    box-shadow: 0 4px 100px rgb(255, 255, 255);
 }
 
-/* 🌟 HOVER EFFECT: Magical Glow */
-.image-content:hover {
-    /* Larger, brighter glow for the container (green) */
-    box-shadow: 0 0 40px rgba(12, 255, 41, 0.8), 
-                0 0 80px rgba(12, 255, 41, 0.6); 
-}
-
-.image-content img:hover {
-    /* Larger, brighter glow for the image (white) */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 
-                0 0 40px rgba(255, 255, 255, 0.6); 
-    transform: scale(1.02); /* Subtle enlargement */
-}
 /* Social Links */
 .social-links {
     display: flex;
@@ -653,12 +578,10 @@ html {
         padding: 0;
         order: -1; 
         margin-bottom: 10px;
-        box-shadow: 0 0 10px rgba(12, 255, 41, 0.4);
     }
     .image-content img {
         width: 100%;
         height: 100%;
-        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
     .text-content {
         text-align: center;
@@ -760,7 +683,3 @@ html {
         border-radius: 15px;
     }
 }
-
-
-
-
