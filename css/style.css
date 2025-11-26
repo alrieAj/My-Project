@@ -8,7 +8,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: rgb(0, 0, 0); 
     line-height: 1.5;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 html {
     scroll-behavior: smooth;
@@ -20,7 +20,10 @@ html {
     position: fixed;
     top: 0;
     left: 0;
+    /* FIX 1: Ensures the navbar spans 100% of the viewport width. */
     width: 100%; 
+    /* The padding is now contained within this 100% width due to the global box-sizing rule. */
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,6 +65,7 @@ html {
     align-items: center;
     gap: 2rem; 
     margin-left: auto; 
+    /* Ensure transition only applies to properties we want */
     transition: transform 0.3s ease-in-out; 
 }
 
@@ -83,21 +87,21 @@ html {
 }
 
 .nav-links a:hover,
-.nav-links a.active { 
+.nav-links a.active { /* 'active' class used by JS */
     color: #0cff29;
 }
 
 
-/* --- Hamburger Menu Styles --- */
+/* --- NEW: Hamburger Menu Styles --- */
 
 .menu-toggle {
-    display: none; 
+    display: none; /* Hidden by default on desktop */
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
     height: 25px;
     cursor: pointer;
-    z-index: 1100; 
+    z-index: 1100; /* Ensure it is above the menu links */
 }
 
 .menu-toggle .bar {
@@ -110,7 +114,7 @@ html {
 
 /* Hamburger transition to X */
 .menu-toggle.active .bar:nth-child(2) {
-    opacity: 0; 
+    opacity: 0; /* Hide middle bar */
 }
 
 .menu-toggle.active .bar:nth-child(1) {
@@ -250,6 +254,8 @@ html {
 .about-text {
     max-width: 600px;
     text-align: justify; 
+    
+    /* IMPROVEMENT: Increased opacity for better contrast/readability */
     background: rgba(255, 255, 255, 0.9); 
     padding: 50px; 
     border-radius: 50px; 
@@ -297,6 +303,7 @@ html {
     box-shadow: 0 8px 40px rgba(0,0,0,0.15); 
     transition: transform 0.3s;
     
+    /* IMPROVEMENT: Flexible sizing for better responsiveness */
     flex: 1 1 300px; 
     max-width: 400px;
 }
@@ -338,6 +345,7 @@ html {
 }
 
 .contact-intro {
+    /* Using rem for better scalability than px */
     font-size: 1.5rem; 
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.8);
@@ -366,6 +374,7 @@ html {
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
     box-shadow: 0 0 50px rgba(12, 255, 41, 0.5);
+    /* Set order to 1 or lower to ensure it's on the left of the form */
     order: 1; 
 }
 
@@ -386,6 +395,7 @@ html {
     justify-content: center;
     flex-grow: 1;
     max-width: 600px;
+    /* Set order to 2 to ensure it's on the right of the image (order: 1) */
     order: 2;
 }
 
@@ -560,15 +570,16 @@ html {
         height: 250px;
     }
     .about-text {
+        /* Contained width for clean text presentation */
         max-width: 400px; 
-        width: 90%; 
+        width: 90%; /* Responsive up to the max-width */
         padding: 30px;
         border-radius: 30px;
         text-align: left;
         margin: 0 auto;
     }
     
-    /* 🚀 PROJECTS SECTION FIX: Cards expanded to use almost full screen width */
+    /* 🛠️ PROJECTS SECTION FIX: Cards expanded to use more screen width */
     .projects-section {
         padding: 40px 15px; /* Reduced vertical padding */
     }
@@ -576,34 +587,37 @@ html {
         gap: 20px;
     }
     .project-card {
-        /* **KEY FIX:** Removed max-width limit and forced to 95% width */
-        flex: 1 1 100%; /* Allows it to take up the full container space */
-        max-width: none; /* **Removed fixed width limit** */
-        width: 95%; /* **Uses 95% of the screen width (minus section padding)** */
+        /* **KEY FIX:** Expands cards for better content visibility */
+        flex: 1 1 300px; 
+        max-width: 400px; /* Allows cards to be wider than the About/Contact boxes */
+        width: 90%; /* Ensures responsiveness */
         margin: 10px auto; 
-        padding: 30px 20px; /* Adjusted internal padding for wider card */
+        padding: 30px; 
     }
     .project-card img {
         max-height: 150px;
         object-fit: contain;
     }
     
-    /* CONTACT SECTION: Ensures column format (Image on top) and better width */
+    /* 🛠️ CONTACT SECTION FIX: Ensures column format (Image on top) and better width */
     .contact-section h2 {
         font-size: 2.5rem; 
     }
     
     .contact-content-wrapper {
+        /* Ensures image is above form */
         flex-direction: column;
         gap: 20px;
     }
     
     .contact-image-wrapper {
+        /* Image: Set to order -1 to be on top of the form */
         order: -1; 
         width: 200px; 
         height: 200px;
     }
     .contact-form-container {
+        /* Form container: Expands to fit better */
         order: 0; 
         max-width: 400px; 
         width: 90%; 
