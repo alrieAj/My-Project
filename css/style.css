@@ -20,9 +20,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    /* FIX 1: Ensures the navbar spans 100% of the viewport width. */
     width: 100%; 
-    /* The padding is now contained within this 100% width due to the global box-sizing rule. */
     
     display: flex;
     justify-content: space-between;
@@ -65,7 +63,6 @@ html {
     align-items: center;
     gap: 2rem; 
     margin-left: auto; 
-    /* Ensure transition only applies to properties we want */
     transition: transform 0.3s ease-in-out; 
 }
 
@@ -123,6 +120,44 @@ html {
 
 .menu-toggle.active .bar:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
+}
+
+/* --- TEXT ANIMATION STYLES --- */
+
+/* Container for the changing word */
+.changing-text {
+    display: inline-block; 
+    position: relative; 
+    overflow: hidden;
+    color: #0cff29; /* Highlight color */
+    min-width: 150px; /* Allocate space to prevent layout jump */
+}
+
+/* Keyframes for the transition effect */
+@keyframes text-reveal {
+    0% {
+        transform: translateY(20px); /* Starts below visibility */
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0);
+        opacity: 1; /* Quick fade in */
+    }
+    90% {
+        transform: translateY(0);
+        opacity: 1; /* Hold position */
+    }
+    100% {
+        transform: translateY(-20px); /* Slides up to disappear */
+        opacity: 0;
+    }
+}
+
+/* Apply animation to the individual word display */
+.changing-text-word {
+    display: block;
+    /* Animation time is 6s to cycle through 3 words (2s per word) */
+    animation: text-reveal 6s infinite; 
 }
 
 /* --- Video Background --- */
@@ -255,7 +290,6 @@ html {
     max-width: 600px;
     text-align: justify; 
     
-    /* IMPROVEMENT: Increased opacity for better contrast/readability */
     background: rgba(255, 255, 255, 0.9); 
     padding: 50px; 
     border-radius: 50px; 
@@ -303,7 +337,6 @@ html {
     box-shadow: 0 8px 40px rgba(0,0,0,0.15); 
     transition: transform 0.3s;
     
-    /* IMPROVEMENT: Flexible sizing for better responsiveness */
     flex: 1 1 300px; 
     max-width: 400px;
 }
@@ -345,7 +378,6 @@ html {
 }
 
 .contact-intro {
-    /* Using rem for better scalability than px */
     font-size: 1.5rem; 
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.8);
@@ -374,7 +406,6 @@ html {
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
     box-shadow: 0 0 50px rgba(12, 255, 41, 0.5);
-    /* Set order to 1 or lower to ensure it's on the left of the form */
     order: 1; 
 }
 
@@ -395,7 +426,6 @@ html {
     justify-content: center;
     flex-grow: 1;
     max-width: 600px;
-    /* Set order to 2 to ensure it's on the right of the image (order: 1) */
     order: 2;
 }
 
@@ -472,7 +502,6 @@ html {
     font-size: 0.9rem;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 /* --- MEDIA QUERY FOR MOBILE (768px and below) --- */
 @media (max-width: 768px) {
