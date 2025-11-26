@@ -760,5 +760,38 @@ html {
         padding: 30px; 
         border-radius: 15px;
     }
+    /* --- Project Button Styles --- */
+
+.project-btn {
+    display: inline-block; /* Allows padding and width/height to be set */
+    margin-top: 15px; /* Spacing above the button */
+    padding: 10px 20px;
+    
+    /* Colors based on your green theme */
+    background-color: #0cff29; 
+    color: #000000; /* Black text on green background */
+    
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    font-size: 1rem;
+    
+    border-radius: 8px;
+    border: 2px solid #0cff29; /* Solid border to emphasize shape */
+    
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+.project-btn:hover {
+    background-color: #00e620; /* Slightly darker green on hover */
+    /* Add a subtle shadow for depth and engagement */
+    box-shadow: 0 4px 15px rgba(12, 255, 41, 0.6); 
+    transform: translateY(-2px); /* Lift the button slightly */
+}
+
+/* Optional: Adjust project card spacing if needed after adding the button */
+.project-card p {
+    margin-bottom: 20px; /* Ensure paragraph spacing before the button */
+}
+}
+
 
