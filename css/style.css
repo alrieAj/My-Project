@@ -124,24 +124,27 @@ html {
 
 /* --- TEXT ANIMATION STYLES (CORRECTED) --- */
 
-/* Container for the changing word */
+/* 🛑 FIX FOR CLIPPING: This container controls the visible window for the animating text */
 .changing-text {
-    display: inline-block; 
+    display: inline-block;  
     position: relative; 
     overflow: hidden;
     color: #0cff29; /* Highlight color */
-    /* FIX 1: Set a fixed height and line-height based on the parent h2 font size */
-    height: 1.5em; /* Adjust this value if your h2 font size changes greatly */
-    line-height: 1.5; /* Matches the line-height set on the body */
-    /* FIX 2: Allocate enough space to prevent layout jump */
-    min-width: 150px; 
+    
+    /* Key Fixes for preventing clipping: */
+    /* 1. Ensure the container is tall enough for one line of text */
+    height: 1.2em; /* Adjusted to be slightly tighter than 1.5em for better alignment */
+    line-height: 1.2; 
+    /* 2. Allocate enough width for the longest word ("Developer") */
+    min-width: 170px; /* Increased width for safety */
+    
     vertical-align: top; /* Keeps it aligned with the static text */
 }
 
 /* Keyframes for the transition effect */
 @keyframes text-reveal {
     0% {
-        transform: translateY(20px); /* Starts below visibility */
+        transform: translateY(100%); /* Starts below visibility */
         opacity: 0;
     }
     10% {
@@ -153,7 +156,7 @@ html {
         opacity: 1; /* Hold position */
     }
     100% {
-        transform: translateY(-20px); /* Slides up to disappear */
+        transform: translateY(-100%); /* Slides up to disappear */
         opacity: 0;
     }
 }
@@ -162,7 +165,7 @@ html {
 .changing-text-word {
     display: block;
     /* Animation time is 6s to cycle through 3 words (2s per word) */
-    animation: text-reveal 6s infinite; 
+    animation: text-reveal 6s infinite;  
     position: absolute; /* Allows for the vertical animation */
     top: 0;
     left: 0;
@@ -569,13 +572,16 @@ html {
     }
 
     .image-content {
-        max-width: 300px;
+        /* Adjusted width and height for a slightly larger mobile profile picture */
+        width: 250px; 
+        height: 250px;
+        padding: 0;
         order: -1; 
         margin-bottom: 10px;
     }
     .image-content img {
-        width: 250px;
-        height: 250px;
+        width: 100%;
+        height: 100%;
     }
     .text-content {
         text-align: center;
@@ -601,10 +607,16 @@ html {
     .about-container {
         gap: 30px;
     }
-    .about-image img {
-        max-width: 250px; 
+    .about-image {
+        /* Adjusted width and height for About section image */
         width: 250px;
         height: 250px;
+        padding: 0;
+    }
+    .about-image img {
+        max-width: 100%; 
+        width: 100%;
+        height: 100%;
     }
     .about-text {
         /* Contained width for clean text presentation */
@@ -612,8 +624,12 @@ html {
         width: 90%; /* Responsive up to the max-width */
         padding: 30px;
         border-radius: 30px;
-        text-align: left;
+        text-align: justify; /* Reset to justify for clean mobile paragraphs */
         margin: 0 auto;
+    }
+    .about-text p {
+        /* Ensure mobile text is readable */
+        font-size: 1rem; 
     }
     
     /* 🛠️ PROJECTS SECTION FIX: Cards expanded to use more screen width */
@@ -626,12 +642,13 @@ html {
     .project-card {
         /* **KEY FIX:** Expands cards for better content visibility */
         flex: 1 1 300px; 
-        max-width: 400px; /* Allows cards to be wider than the About/Contact boxes */
+        max-width: 400px; 
         width: 90%; /* Ensures responsiveness */
         margin: 10px auto; 
         padding: 30px; 
     }
     .project-card img {
+        /* Ensure project images fit within the card without being too huge */
         max-height: 150px;
         object-fit: contain;
     }
@@ -652,6 +669,8 @@ html {
         order: -1; 
         width: 200px; 
         height: 200px;
+        /* FIX: Adjusted box-shadow color to match the glowing green/white circle in your image */
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.5), 0 0 50px rgba(12, 255, 41, 0.5);
     }
     .contact-form-container {
         /* Form container: Expands to fit better */
@@ -664,4 +683,3 @@ html {
         border-radius: 15px;
     }
 }
-
