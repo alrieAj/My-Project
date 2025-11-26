@@ -195,31 +195,85 @@ html {
     overflow: hidden; 
     padding: 100px 15px 40px 15px; 
     background: transparent; 
-    gap: 150px;
+    gap: 100px; 
 }
 
-.text-content,
-.image-content {
+.text-content {
     color: white;  
     flex-shrink: 0;
+    max-width: 650px; 
 }
 
-/* Home Section Text Content */
-.text-content {
-    max-width: 600px;
+/* FIX 1: Make H1 stay on one line */
+.text-content h1 {
+    font-size: clamp(40px, 8vw, 100px);
+    white-space: nowrap; /* Forces H1 to stay on a single line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px; 
+}
+
+/* FIX 2: H2 is the container for the 2nd and 3rd lines */
+.text-content h2 {
+    font-size: clamp(20px, 4vw, 45px);
+    margin-top: 0; 
+    display: block; /* Ensures h2 behaves like a block element */
+}
+
+/* New element for "Full Stack Software" - Force it to its own line */
+.static-h2-text {
+    display: block; /* Forces this span to take up a full line inside H2 */
+    margin-bottom: 10px; /* Adds space above the animated text */
+}
+
+/* 🛑 FIX 3: Correct Clipping and Sizing for Animation */
+.changing-text {
+    display: inline-block; /* Allows width/height manipulation and sits on the same line as "Architect" placeholder */ 
+    position: relative; 
+    overflow: hidden; /* Essential for clipping the animating words */
+    color: #0cff29; /* Highlight color */
+    
+    /* Key Fixes for preventing clipping: */
+    height: 1.2em; /* Must be the height of one line */
+    line-height: 1.2; 
+    min-width: 250px; /* GUARANTEES "Developer" fits (Adjust higher if needed) */
+    
+    vertical-align: middle; 
+    margin-left: 0; /* Remove previous spacing */
+}
+
+/* The rest of the animation CSS (keyframes and .changing-text-word) is correct: */
+
+@keyframes text-reveal {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.changing-text-word {
+    display: block;
+    animation: text-reveal 6s infinite;  
+    position: absolute; 
+    top: 0;
+    left: 0;
 }
 
 /* Style for intro paragraph to control width without <br> */
 .text-content .intro-paragraph {
     max-width: 500px; 
-}
-
-.text-content h1 {
-    font-size: clamp(40px, 10vw, 100px); 
-}
-
-.text-content h2 {
-    font-size: clamp(20px, 5vw, 45px);
 }
 
 .text-content p {
@@ -230,12 +284,17 @@ html {
 
 /* Right Side Image Wrapper */
 .image-content {
-    padding: 20px;
+    padding: 20px; /* Keep padding for the shadow space */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 420px;
     height: 420px;
+    flex-shrink: 0; 
+    /* Add this if you want the *container* to have a subtle initial glow */
+    box-shadow: 0 0 15px rgba(12, 255, 41, 0.4); 
+    border-radius: 50%; /* Ensure the container is also round for a consistent shadow */
+    transition: box-shadow 0.4s ease-in-out; /* Smooth transition for the glow */
 }
 
 .image-content img {
@@ -243,7 +302,23 @@ html {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 4px 100px rgb(255, 255, 255);
+    /* Initial subtle glow around the image itself */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    transition: box-shadow 0.4s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* 🌟 Hover Effect for a Magical Glow */
+.image-content:hover {
+    /* Larger, brighter glow for the container */
+    box-shadow: 0 0 40px rgba(12, 255, 41, 0.8), 
+                0 0 80px rgba(12, 255, 41, 0.6); 
+}
+
+.image-content img:hover {
+    /* Larger, brighter glow for the image */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 
+                0 0 40px rgba(255, 255, 255, 0.6); 
+    transform: scale(1.02); /* Optional: Slightly enlarge the image */
 }
 
 /* Social Links */
@@ -578,11 +653,14 @@ html {
         padding: 0;
         order: -1; 
         margin-bottom: 10px;
+        box-shadow: 0 0 10px rgba(12, 255, 41, 0.4);
     }
     .image-content img {
         width: 100%;
         height: 100%;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
+    
     .text-content {
         text-align: center;
     }
@@ -683,3 +761,4 @@ html {
         border-radius: 15px;
     }
 }
+
