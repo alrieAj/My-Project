@@ -15,8 +15,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    /* FIX: Changed fixed width to 100% to prevent overflow/horizontal scroll */
-    width: 100%; 
+    width: 1400px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -570,3 +569,4 @@ html {
         order: 0; 
     }
 }
+
