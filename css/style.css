@@ -19,8 +19,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Updated padding to 80px top/bottom and 80px left/right to match .projects-section */
-    padding: 80px 80px; 
+    padding: 40px 80px 20px 40px;
     z-index: 1000;
     background-color: transparent;
     box-shadow: none;
@@ -445,6 +444,7 @@ html {
         text-align: left;
     }
 }
+
 
 
 
