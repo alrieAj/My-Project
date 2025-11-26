@@ -1,3 +1,8 @@
+/* Best practice: Apply box-sizing globally for predictable layouts */
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -15,9 +20,10 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    /* 🔴 CRITICAL FIX: Ensures the navbar spans 100% of the viewport width. */
-    /* This prevents horizontal scrolling and layout breaking on small screens. */
+    /* FIX 1: Ensures the navbar spans 100% of the viewport width. */
     width: 100%; 
+    /* The padding is now contained within this 100% width due to the global box-sizing rule. */
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -469,13 +475,13 @@ html {
 /* --- MEDIA QUERY FOR MOBILE (768px and below) --- */
 @media (max-width: 768px) {
     
-    /* ADDED FIX: Adjust padding on the fixed header for mobile view 
+    /* FIX: Reduce padding on the fixed header for mobile view 
        to ensure the logo and hamburger icon don't crowd the edges. */
     .nav-header {
         padding: 10px 15px 10px 15px; 
     }
     
-    /* 🟢 SUCCESS: Display the hamburger icon on mobile */
+    /* Display the hamburger icon on mobile */
     .menu-toggle {
         display: flex;
         margin-left: auto; /* Push it to the right */
