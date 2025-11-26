@@ -321,28 +321,89 @@ html {
 
 /* Contact Section */
 .contact-section {
+    /* Existing padding and text-align properties */
     padding: 80px 40px;
     text-align: center;
     color: white; 
 }
 
-.contact-section h2 { 
-    font-size: 2.5rem;
+.contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95); /* Light background for form fields */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-.contact-section p {
-    font-size: 1.2rem;
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
-.contact-section a {
-    color: #0cff29; 
-    text-decoration: none;
-    transition: color 0.3s;
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Important for padding/border not affecting total width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-.contact-section a:hover {
-    color: #00ff00;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0cff29; /* Highlight color on focus */
+    box-shadow: 0 0 8px rgba(12, 255, 41, 0.5);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing but not horizontal */
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #0cff29; /* Your portfolio green/accent color */
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #00e620; /* Slightly darker green on hover */
+    transform: translateY(-2px);
 }
 
 /* Footer Styles (New addition) */
@@ -444,6 +505,7 @@ html {
         text-align: left;
     }
 }
+
 
 
 
