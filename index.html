@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Albert Pingol - Full Stack Software Architect</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>Albert Pingol | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
+
+    <video autoplay muted loop class="bg-video">
+        <source src="videos/background.mp4" type="video/mp4">
+    </video>
 
     <header class="nav-header">
         <a href="#home" class="logo">
@@ -23,43 +26,49 @@
             </ul>
         </nav>
         <div class="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </header>
 
     <main>
         <section id="home" class="home-section">
             <div class="text-content">
-                <h1>Albert Pingol</h1> 
-                
-                <h2 class="full-stack-line">Full Stack Software</h2> 
-                <h2 class="animated-job-title">
+                <h1>Albert Pingol</h1>
+                <h2>
+                    Full Stack Software 
                     <span class="changing-text">Architect</span> 
                 </h2>
-                
-                <p class="intro-paragraph">Hello! I'm a Web Developer, Designer, and Application Architect who creates modern, user-friendly, and scalable solutions with eye-catching designs that leave a lasting impression.</p>
-
+                <p class="intro-paragraph">
+                    Hello! I'm a Web Developer, Designer, and Application Architect who creates modern, user-friendly, and scalable solutions with eye-catching designs that leave a lasting impression.
+                </p>
                 <div class="social-links">
-                    <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-                    <a href="mailto:your.email@example.com"><img src="images/gmail.png" alt="Gmail"></a>
-                    <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
-                    <a href="images/resume.pdf" target="_blank"><img src="images/resume.png" alt="Resume"></a>
+                    <a href="https://www.facebook.com/albert.pingol17" target="_blank">
+                        <img src="images/facebook.png" alt="Facebook link">
+                    </a>
+                    <a href="mailto:albert_pingol@sjp2cd.edu.ph" target="_blank">
+                        <img src="images/gmail.png" alt="Gmail link">
+                    </a>
+                    <a href="https://www.linkedin.com/in/albert-pingol-8339a42b1/" target="_blank">
+                        <img src="images/linkedin.png" alt="LinkedIn link">
+                    </a>
+                    <a href="resume.pdf" download>
+                        <img src="images/cv.png" alt="Download Resume">
+                    </a>
                 </div>
             </div>
-
             <div class="image-content">
-                <img src="images/profile.jpg" alt="Albert Pingol - Profile Photo">
+                <img src="images/profile1.jpg" alt="Albert Pingol's professional photo">
             </div>
         </section>
-
+        
         <section id="about" class="about-section">
             <div class="about-container">
-                <div class="about-image animate-hidden"> 
+                <div class="about-image">
                     <img src="images/profile1.jpg" alt="Albert Pingol - About Me photo">
                 </div>
-                <div class="about-text animate-hidden"> 
+                <div class="about-text">
                     <h2 class="about-title">About Me</h2>
                     <p>As a Full Stack Software Architect, I thrive on bridging the gap between elegant design and robust, scalable functionality. My journey in web development has been driven by a passion for creating digital experiences that are not just efficient, but genuinely enjoyable to use.</p>
                     <p>I specialize in modern frameworks and technologies, consistently looking for new ways to make web solutions stand out.</p>
@@ -71,19 +80,19 @@
             <h2>My Projects</h2>
             <div class="projects-container">
                 
-                <div class="project-card animate-hidden">
+                <div class="project-card">
                     <img src="images/AgriWebsite.PNG" alt="Screenshot of AgriWebsite Educational Website">
                     <h3>AgriWebsite Educational Website</h3>
                     <p>A dedicated platform bridging technology and tradition to promote sustainable farming. Provides valuable resources and innovative tools for farm efficiency and environmentally friendly practices.</p>
                 </div>
                 
-                <div class="project-card animate-hidden">
+                <div class="project-card">
                     <img src="images/Timeless Blooms.PNG" alt="Screenshot of Timeless Blooms Flowershop E-Commerce website">
                     <h3>Timeless Blooms Flowershop E-Commerce</h3>
                     <p>A high-quality e-commerce floral platform ensuring maximum freshness. It provides seamless shopping for stunning, meticulously sourced bouquets for any special event.</p>
                 </div>
                 
-                <div class="project-card animate-hidden">
+                <div class="project-card">
                     <img src="images/CRUD.PNG" alt="Screenshot of a generic project interface">
                     <h3>Inventory Management System</h3>
                     <p>A back-end system demonstrating Create, Read, Update, and Delete functionality for streamlined stock control and data management.</p>
@@ -92,14 +101,15 @@
         </section>
 
         <section id="contact" class="contact-section">
-            <h2>Get in Touch</h2>
-            <p class="contact-intro">Whether you have a project idea, a job opportunity, or just want to say hello, feel free to reach out using the form below!</p>
+            <h2> Want to collaborate or hire me?</h2>
+            <p class="contact-intro">
+                Whether you have a project idea, a job opportunity, or just want to say hello, feel free to reach out using the form below!
+            </p>
             <div class="contact-content-wrapper">
                 <div class="contact-image-wrapper">
-                    <img src="images/mail-dog.png" alt="Cute mail dog image">
-                </div>
+                    <img src="images/cute_animal.jpg" alt="Contact Icon"> </div>
                 <div class="contact-form-container">
-                    <form class="contact-form">
+                    <form class="contact-form" action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" placeholder="Your Full Name" required>
@@ -110,7 +120,7 @@
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject:</label>
-                            <input type="text" id="subject" name="subject" placeholder="Briefly what this is about">
+                            <input type="text" id="subject" name="subject" placeholder="Briefly what this is about" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message:</label>
@@ -127,6 +137,68 @@
         © 2025 Albert Pingol. All Rights Reserved.
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        // --- TEXT ANIMATION JAVASCRIPT ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const changingTextContainer = document.querySelector('.changing-text');
+            
+            // 1. Define the roles to cycle through
+            const roles = ["Architect", "Designer", "Developer"];
+            let roleIndex = 0;
+            
+            function animateTextChange() {
+                if (!changingTextContainer) return;
+
+                // 2. Get the current word
+                const currentRole = roles[roleIndex];
+                
+                // 3. Create a new span for the word to apply the animation keyframes
+                const newWordSpan = document.createElement('span');
+                newWordSpan.classList.add('changing-text-word');
+                newWordSpan.textContent = currentRole;
+                
+                // 4. Clear the container and insert the new word
+                changingTextContainer.innerHTML = '';
+                changingTextContainer.appendChild(newWordSpan);
+                
+                // 5. Update index for the next word
+                roleIndex = (roleIndex + 1) % roles.length;
+                
+                // 6. Set the timing for the cycle (2000ms = 2 seconds per word)
+                setTimeout(animateTextChange, 2000); 
+            }
+
+            // Start the animation cycle
+            animateTextChange();
+        });
+
+        // --- NAVBAR SCROLL and MENU TOGGLE JAVASCRIPT ---
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Scrolled header effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
