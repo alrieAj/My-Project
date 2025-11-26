@@ -192,7 +192,7 @@ html {
     overflow: hidden; 
     padding: 100px 15px 40px 15px; 
     background: transparent; 
-    gap: 50px;
+    gap: 150px;
 }
 
 .text-content,
@@ -664,3 +664,4 @@ html {
         border-radius: 15px;
     }
 }
+
