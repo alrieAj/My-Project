@@ -288,7 +288,12 @@ html {
     align-items: center;
     width: 420px;
     height: 420px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    /* --- GLOW ADDITION START: Base Glow & Transition for Wrapper --- */
+    box-shadow: 0 0 15px rgba(12, 255, 41, 0.4); 
+    border-radius: 50%; 
+    transition: box-shadow 0.4s ease-in-out; 
+    /* --- GLOW ADDITION END --- */
 }
 
 .image-content img {
@@ -296,10 +301,26 @@ html {
     height: 100%;
     object-fit: cover;
     /* This style is key to the circle shape */
-    border-radius: 50%; 
-    box-shadow: 0 4px 100px rgb(255, 255, 255);
+    border-radius: 50%;
+    /* --- GLOW ADDITION START: Base Glow & Transition for Image --- */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.4s ease-in-out, transform 0.3s ease-in-out;
+    /* --- GLOW ADDITION END --- */
 }
 
+/* 🌟 HOVER EFFECT: Magical Glow */
+.image-content:hover {
+    /* Larger, brighter glow for the container (green) */
+    box-shadow: 0 0 40px rgba(12, 255, 41, 0.8), 
+                0 0 80px rgba(12, 255, 41, 0.6); 
+}
+
+.image-content img:hover {
+    /* Larger, brighter glow for the image (white) */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 
+                0 0 40px rgba(255, 255, 255, 0.6); 
+    transform: scale(1.02); /* Subtle enlargement */
+}
 /* Social Links */
 .social-links {
     display: flex;
@@ -632,10 +653,12 @@ html {
         padding: 0;
         order: -1; 
         margin-bottom: 10px;
+        box-shadow: 0 0 10px rgba(12, 255, 41, 0.4);
     }
     .image-content img {
         width: 100%;
         height: 100%;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
     .text-content {
         text-align: center;
@@ -737,6 +760,7 @@ html {
         border-radius: 15px;
     }
 }
+
 
 
 
