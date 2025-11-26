@@ -15,7 +15,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -444,6 +444,7 @@ html {
         text-align: left;
     }
 }
+
 
 
 
