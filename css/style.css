@@ -11,48 +11,83 @@ html {
 }
 
 /* Navbar Styles */
-/* Navbar Styles */
 .nav-header {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    /* Updated padding to 80px top/bottom and 80px left/right to match .projects-section */
-    padding: 80px 80px; 
+
+    padding: 1rem 2rem;
+
     z-index: 1000;
+
     background-color: transparent;
+
     box-shadow: none;
+
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
 }
+
+
 
 /* CSS for when header is scrolled (added via JavaScript) */
+
 .nav-header.scrolled {
+
     background-color: rgba(0, 0, 0, 0.95); 
+
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
 }
+
+
 
 /* Logo Styles */
+
 .nav-header .logo {
+
     display: flex;
+
     align-items: center;
+
     background-color: #fefffe;
+
     border-radius: 50%;
+
 }
+
+
 
 .nav-header .logo img {
+
     height: 50px;
+
     width: 50px;
+
     border-radius: 10px;
+
     transition: transform 0.3s;
+
 }
+
+
 
 .nav-header .logo img:hover {
-    transform: scale(1.1);
-}
 
+    transform: scale(1.1);
+
+}
 /* Navigation Links Container (Desktop) */
 .nav-links {
     display: flex;
