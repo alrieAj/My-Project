@@ -220,17 +220,15 @@ html {
     display: block; /* Ensures h2 behaves like a block element */
 }
 
-/* New element for "Full Stack Software" - Force it to its own line */
 .static-h2-text {
-    display: block; /* Forces this span to take up a full line inside H2 */
-    margin-bottom: 10px; /* Adds space above the animated text */
+    display: block; 
+    margin-bottom: 10px; 
 }
 
-/* 🛑 FIX 3: Correct Clipping and Sizing for Animation */
 .changing-text {
-    display: inline-block; /* Allows width/height manipulation and sits on the same line as "Architect" placeholder */ 
+    display: inline-block; 
     position: relative; 
-    overflow: hidden; /* Essential for clipping the animating words */
+    overflow: hidden;
     color: #0cff29; /* Highlight color */
     
     /* Key Fixes for preventing clipping: */
@@ -291,6 +289,15 @@ html {
     width: 420px;
     height: 420px;
     flex-shrink: 0; 
+}
+
+.image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This style is key to the circle shape */
+    border-radius: 50%; 
+    box-shadow: 0 4px 100px rgb(255, 255, 255);
 }
 
 /* Social Links */
@@ -730,5 +737,6 @@ html {
         border-radius: 15px;
     }
 }
+
 
 
