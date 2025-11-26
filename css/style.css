@@ -331,7 +331,7 @@ html {
 }
 
 .contact-intro {
-    font-size: 1.1rem;
+    font-size: 24px;
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.8);
     max-width: 700px;
@@ -544,6 +544,7 @@ html {
         text-align: left;
     }
 }
+
 
 
 
