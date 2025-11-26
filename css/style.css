@@ -8,7 +8,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: rgb(0, 0, 0); 
     line-height: 1.5;
-    /* FIX: Prevents accidental horizontal scrolling on all devices */
     overflow-x: hidden; 
 }
 html {
@@ -298,7 +297,6 @@ html {
     box-shadow: 0 8px 40px rgba(0,0,0,0.15); 
     transition: transform 0.3s;
     
-    /* IMPROVEMENT: Flexible sizing for better responsiveness */
     flex: 1 1 300px; 
     max-width: 400px;
 }
@@ -481,8 +479,21 @@ html {
         margin-left: auto; 
     }
     .nav-links {
-        /* Mobile menu styles */
-        /* ... existing styles ... */
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px; 
+        background-color: rgba(0, 0, 0, 0.98); 
+        transform: translateX(100%); 
+        z-index: 999; 
+        padding-top: 100px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-links.active {
+        transform: translateX(0); 
     }
 
     /* Home Section adjustments remain the same */
@@ -496,73 +507,69 @@ html {
         order: -1; 
     }
 
-    /* --- ABOUT SECTION IMPROVEMENTS --- */
+    /* --- ABOUT SECTION IMPROVEMENTS (Clean Contained Look) --- */
     .about-container {
         gap: 30px;
     }
     .about-image img {
-        /* Ensure the image remains centered and sized well */
         max-width: 250px; 
         width: 250px;
         height: 250px;
     }
     .about-text {
-        /* 🚀 FIX: EXPAND CONTAINER */
-        width: 90%; 
-        max-width: none; /* Override desktop max-width */
-        padding: 30px 15px; /* Reduced internal horizontal padding */
+        /* Set reasonable max-width for centering, wide enough for text */
+        max-width: 400px; 
+        width: auto; 
+        padding: 40px; 
         border-radius: 30px;
         text-align: left;
-        margin: 0 auto; /* Center the container */
+        margin: 0 auto; 
     }
 
-    /* --- PROJECTS SECTION IMPROVEMENTS --- */
+    /* --- PROJECTS SECTION IMPROVEMENTS (Expanded Width) --- */
     .projects-section {
-        /* 🚀 FIX: Reduce unnecessary large padding */
         padding: 40px 15px; 
     }
     .projects-container {
         gap: 20px;
     }
     .project-card {
-        /* 🚀 FIX: EXPAND CARD TO ALMOST FULL WIDTH */
-        flex: 1 1 100%;
-        max-width: 95%; /* Use almost the full width of the section */
-        margin: 0 auto; /* Center card if it doesn't take 100% */
-        padding: 20px; /* Reduced internal padding */
+        /* 🚀 FIX: EXPANDED WIDTH for better text/image visibility */
+        flex: 1 1 300px; 
+        max-width: 400px; /* Increased max-width for mobile */
+        width: 90%; /* Use 90% of container width up to 400px */
+        margin: 10px auto; 
+        padding: 30px; 
     }
     .project-card img {
-        /* Ensure project images are clearly visible */
         max-height: 150px;
         object-fit: contain;
     }
 
-    /* --- CONTACT SECTION IMPROVEMENTS --- */
+    /* --- CONTACT SECTION IMPROVEMENTS (Column & Contained Width) --- */
     .contact-section h2 {
         font-size: 2.5rem; 
     }
     
     .contact-content-wrapper {
-        /* This wrapper is already set to column direction for mobile */
+        /* Ensures image is above form */
         flex-direction: column;
         gap: 20px;
     }
     
     .contact-image-wrapper {
-        /* The dog image wrapper */
+        /* The dog image wrapper: set to order -1 to be on top */
         order: -1; 
         width: 200px; 
         height: 200px;
     }
     .contact-form-container {
-        /* 🚀 FIX: EXPAND FORM CONTAINER */
-        order: 0; 
-        max-width: 95%; /* Use almost the full width of the section */
-        width: 100%;
+        /* FIX: Wider max-width for better form readability */
+        max-width: 400px; 
+        width: 90%; /* Use 90% of container width up to 400px */
     }
     .contact-form {
-        /* 🚀 FIX: Reduce internal padding on the form box */
-        padding: 20px; 
+        padding: 30px; 
         border-radius: 15px;
     }
 }
