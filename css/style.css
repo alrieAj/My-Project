@@ -15,7 +15,9 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    width: 1400px; 
+    /* 🔴 CRITICAL FIX: Ensures the navbar spans 100% of the viewport width. */
+    /* This prevents horizontal scrolling and layout breaking on small screens. */
+    width: 100%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -467,7 +469,13 @@ html {
 /* --- MEDIA QUERY FOR MOBILE (768px and below) --- */
 @media (max-width: 768px) {
     
-    /* Display the hamburger icon on mobile */
+    /* ADDED FIX: Adjust padding on the fixed header for mobile view 
+       to ensure the logo and hamburger icon don't crowd the edges. */
+    .nav-header {
+        padding: 10px 15px 10px 15px; 
+    }
+    
+    /* 🟢 SUCCESS: Display the hamburger icon on mobile */
     .menu-toggle {
         display: flex;
         margin-left: auto; /* Push it to the right */
@@ -569,4 +577,3 @@ html {
         order: 0; 
     }
 }
-
