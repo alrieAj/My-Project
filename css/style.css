@@ -473,7 +473,6 @@ html {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
----
 
 /* --- MEDIA QUERY FOR MOBILE (768px and below) --- */
 @media (max-width: 768px) {
@@ -483,9 +482,9 @@ html {
         padding: 10px 15px 10px 15px; 
     }
     
-    /* Display the hamburger icon on mobile */
+    /* 🍔 HAMBURGER MENU FIX: Must be 'flex' to show up on mobile */
     .menu-toggle {
-        display: flex;
+        display: flex; 
         margin-left: auto; /* Push it to the right */
     }
 
