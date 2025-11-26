@@ -11,6 +11,7 @@ html {
 }
 
 /* Navbar Styles */
+/* Navbar Styles */
 .nav-header {
     position: fixed;
     top: 0;
@@ -19,7 +20,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    /* Updated padding to 80px top/bottom and 80px left/right to match .projects-section */
+    padding: 80px 80px; 
     z-index: 1000;
     background-color: transparent;
     box-shadow: none;
@@ -444,4 +446,5 @@ html {
         text-align: left;
     }
 }
+
 
