@@ -8,7 +8,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: rgb(0, 0, 0); 
     line-height: 1.5;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 html {
     scroll-behavior: smooth;
@@ -20,7 +20,10 @@ html {
     position: fixed;
     top: 0;
     left: 0;
+    /* FIX 1: Ensures the navbar spans 100% of the viewport width. */
     width: 100%; 
+    /* The padding is now contained within this 100% width due to the global box-sizing rule. */
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,6 +65,7 @@ html {
     align-items: center;
     gap: 2rem; 
     margin-left: auto; 
+    /* Ensure transition only applies to properties we want */
     transition: transform 0.3s ease-in-out; 
 }
 
@@ -83,21 +87,21 @@ html {
 }
 
 .nav-links a:hover,
-.nav-links a.active { 
+.nav-links a.active { /* 'active' class used by JS */
     color: #0cff29;
 }
 
 
-/* --- Hamburger Menu Styles --- */
+/* --- NEW: Hamburger Menu Styles --- */
 
 .menu-toggle {
-    display: none; 
+    display: none; /* Hidden by default on desktop */
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
     height: 25px;
     cursor: pointer;
-    z-index: 1100; 
+    z-index: 1100; /* Ensure it is above the menu links */
 }
 
 .menu-toggle .bar {
@@ -110,7 +114,7 @@ html {
 
 /* Hamburger transition to X */
 .menu-toggle.active .bar:nth-child(2) {
-    opacity: 0; 
+    opacity: 0; /* Hide middle bar */
 }
 
 .menu-toggle.active .bar:nth-child(1) {
@@ -250,6 +254,8 @@ html {
 .about-text {
     max-width: 600px;
     text-align: justify; 
+    
+    /* IMPROVEMENT: Increased opacity for better contrast/readability */
     background: rgba(255, 255, 255, 0.9); 
     padding: 50px; 
     border-radius: 50px; 
@@ -297,6 +303,7 @@ html {
     box-shadow: 0 8px 40px rgba(0,0,0,0.15); 
     transition: transform 0.3s;
     
+    /* IMPROVEMENT: Flexible sizing for better responsiveness */
     flex: 1 1 300px; 
     max-width: 400px;
 }
@@ -338,6 +345,7 @@ html {
 }
 
 .contact-intro {
+    /* Using rem for better scalability than px */
     font-size: 1.5rem; 
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.8);
@@ -366,6 +374,7 @@ html {
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
     box-shadow: 0 0 50px rgba(12, 255, 41, 0.5);
+    /* Set order to 1 or lower to ensure it's on the left of the form */
     order: 1; 
 }
 
@@ -386,6 +395,7 @@ html {
     justify-content: center;
     flex-grow: 1;
     max-width: 600px;
+    /* Set order to 2 to ensure it's on the right of the image (order: 1) */
     order: 2;
 }
 
@@ -462,22 +472,22 @@ html {
     font-size: 0.9rem;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
----
-
 /* --- MEDIA QUERY FOR MOBILE (768px and below) --- */
 @media (max-width: 768px) {
     
-    /* Header padding is reduced for mobile */
+    /* FIX: Reduce padding on the fixed header for mobile view 
+       to ensure the logo and hamburger icon don't crowd the edges. */
     .nav-header {
         padding: 10px 15px 10px 15px; 
     }
     
-    /* Menu Toggle and Nav Links remain the same */
+    /* Display the hamburger icon on mobile */
     .menu-toggle {
         display: flex;
-        margin-left: auto; 
+        margin-left: auto; /* Push it to the right */
     }
+
+    /* Collapse/Hide the desktop navigation menu */
     .nav-links {
         position: fixed;
         top: 0;
@@ -485,91 +495,91 @@ html {
         height: 100vh;
         width: 300px; 
         background-color: rgba(0, 0, 0, 0.98); 
-        transform: translateX(100%); 
-        z-index: 999; 
+        transform: translateX(100%); /* Start off-screen */
+        z-index: 999; /* Below the menu-toggle */
         padding-top: 100px;
         flex-direction: column;
         align-items: flex-start;
     }
     
+    /* When the menu is toggled open by JS */
     .nav-links.active {
-        transform: translateX(0); 
+        transform: translateX(0); /* Slide into view */
     }
 
-    /* Home Section adjustments remain the same */
+    /* Adjust the navigation list for vertical stacking */
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+        margin: 0;
+        padding: 20px 40px;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
+    }
+
+    /* Home Section adjustments */
     .home-section {
         flex-direction: column;
         padding: 100px 15px 40px;
         gap: 20px;
     }
+
     .image-content {
         max-width: 300px;
         order: -1; 
+        margin-bottom: 10px;
     }
-
-    /* --- ABOUT SECTION IMPROVEMENTS (Clean Contained Look) --- */
-    .about-container {
-        gap: 30px;
-    }
-    .about-image img {
-        max-width: 250px; 
+    .image-content img {
         width: 250px;
         height: 250px;
     }
+    .text-content {
+        text-align: center;
+    }
+    
+    .text-content .intro-paragraph {
+        max-width: none;
+        padding: 0 10px;
+    }
+    .social-links {
+        justify-content: center;
+    }
+
+    .text-content h1 {
+        font-size: clamp(30px, 8vw, 80px);
+    }
+
+    .text-content h2 {
+        font-size: clamp(18px, 5vw, 35px);
+    }
+
+    /* About container on mobile */
+    .about-container {
+        gap: 30px;
+    }
     .about-text {
-        /* Set reasonable max-width for centering, wide enough for text */
-        max-width: 400px; 
-        width: auto; 
-        padding: 40px; 
+        padding: 30px;
         border-radius: 30px;
         text-align: left;
-        margin: 0 auto; 
     }
-
-    /* --- PROJECTS SECTION IMPROVEMENTS (Expanded Width) --- */
-    .projects-section {
-        padding: 40px 15px; 
-    }
-    .projects-container {
-        gap: 20px;
-    }
-    .project-card {
-        /* 🚀 FIX: EXPANDED WIDTH for better text/image visibility */
-        flex: 1 1 300px; 
-        max-width: 400px; /* Increased max-width for mobile */
-        width: 90%; /* Use 90% of container width up to 400px */
-        margin: 10px auto; 
-        padding: 30px; 
-    }
-    .project-card img {
-        max-height: 150px;
-        object-fit: contain;
-    }
-
-    /* --- CONTACT SECTION IMPROVEMENTS (Column & Contained Width) --- */
+    
+    /* Contact section adjustments for mobile */
     .contact-section h2 {
-        font-size: 2.5rem; 
+        font-size: 2.5rem; /* Adjust heading size for mobile */
     }
-    
-    .contact-content-wrapper {
-        /* Ensures image is above form */
-        flex-direction: column;
-        gap: 20px;
-    }
-    
     .contact-image-wrapper {
-        /* The dog image wrapper: set to order -1 to be on top */
+        /* Reset for vertical stacking on mobile */
         order: -1; 
         width: 200px; 
         height: 200px;
     }
     .contact-form-container {
-        /* FIX: Wider max-width for better form readability */
-        max-width: 400px; 
-        width: 90%; /* Use 90% of container width up to 400px */
-    }
-    .contact-form {
-        padding: 30px; 
-        border-radius: 15px;
+        /* Reset for vertical stacking on mobile */
+        order: 0; 
     }
 }
