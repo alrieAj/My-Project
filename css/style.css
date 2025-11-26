@@ -122,7 +122,7 @@ html {
     transform: translateY(-11px) rotate(-45deg);
 }
 
-/* --- TEXT ANIMATION STYLES --- */
+/* --- TEXT ANIMATION STYLES (CORRECTED) --- */
 
 /* Container for the changing word */
 .changing-text {
@@ -130,7 +130,12 @@ html {
     position: relative; 
     overflow: hidden;
     color: #0cff29; /* Highlight color */
-    min-width: 150px; /* Allocate space to prevent layout jump */
+    /* FIX 1: Set a fixed height and line-height based on the parent h2 font size */
+    height: 1.5em; /* Adjust this value if your h2 font size changes greatly */
+    line-height: 1.5; /* Matches the line-height set on the body */
+    /* FIX 2: Allocate enough space to prevent layout jump */
+    min-width: 150px; 
+    vertical-align: top; /* Keeps it aligned with the static text */
 }
 
 /* Keyframes for the transition effect */
@@ -158,7 +163,11 @@ html {
     display: block;
     /* Animation time is 6s to cycle through 3 words (2s per word) */
     animation: text-reveal 6s infinite; 
+    position: absolute; /* Allows for the vertical animation */
+    top: 0;
+    left: 0;
 }
+
 
 /* --- Video Background --- */
 .bg-video {
