@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <title>Albert Pingol | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
-    <header class="nav-header">
-        <div class="logo">
-            <a href="#home">
-                <img src="images/logo.png" alt="My Logo">
-            </a>
-        </div>
 
+    <video autoplay muted loop class="bg-video">
+        <source src="your-video-file.mp4" type="video/mp4">
+        <img src="fallback-image.jpg" alt="Background image of greenery">
+    </video>
+
+    <header class="nav-header">
+        <a href="#home" class="logo">
+            <img src="your-logo.png" alt="Logo">
+        </a>
         <nav class="nav-links">
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        
         <div class="menu-toggle">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -30,128 +32,159 @@
         </div>
     </header>
 
-    <video class="bg-video" autoplay muted loop >
-        <source src="videos/background.mp4" type="video/mp4">
-    </video>
-
     <main>
         <section id="home" class="home-section">
-            <div class="text-content ">
+            <div class="text-content">
                 <h1>Albert Pingol</h1>
-                <h2>Full Stack Software Architect</h2>
-                <p class="intro-paragraph">Hello! I’m a Web Developer, Designer, and Application Architect who creates modern, user-friendly, and scalable solutions with eye-catching designs that leave a lasting impression.</p>
-                
+                <h2>
+                    Full Stack Software 
+                    <span class="changing-text">Architect</span> 
+                </h2>
+                <p class="intro-paragraph">
+                    Hello! I'm a Web Developer, Designer, and Application Architect who creates modern, user-friendly, and scalable solutions with eye-catching designs that leave a lasting impression.
+                </p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/albert.pingol17" target="_blank">
-                        <img src="images/facebook.png" alt="Facebook link">
-                    </a>
-
-                    <a href="mailto:albert_pingol@sjp2cd.edu.ph" target="_blank">
-                        <img src="images/gmail.png" alt="Gmail link">
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/albert-pingol-8339a42b1/" target="_blank">
-                        <img src="images/linkedin.png" alt="LinkedIn link">
-                    </a>
-
-                    <a href="resume.pdf" download>
-                        <img src="images/cv.png" alt="Download Resume">
-                    </a>
+                    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="gmail.png" alt="Gmail"></a>
+                    <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
-
             <div class="image-content">
-                <img src="images/profile1.jpg" alt="Albert Pingol's professional photo">
+                <img src="your-profile-pic.jpg" alt="Albert Pingol">
             </div>
         </section>
-
+        
         <section id="about" class="about-section">
             <div class="about-container">
                 <div class="about-image">
-                    <img src="images/profile1.jpg" alt="Albert Pingol - About Me photo">
+                    <img src="your-about-image.jpg" alt="Profile Picture">
                 </div>
                 <div class="about-text">
-                    <h2 class="about-title">About Me</h2> 
-                    <p>
-                        As a Full Stack Software Architect, I thrive on bridging the gap between elegant design and robust, scalable functionality. My journey in web development has been driven by a passion for creating digital experiences that are not just efficient, but genuinely enjoyable to use.
-                    </p>
-                    <p>
-                        I specialize in modern frameworks and love tackling complex problems, transforming ideas into polished, user-centric applications. When I'm not coding, you'll find me exploring the latest in design trends, constantly looking for new ways to make web solutions stand out.
-                    </p>
+                    <h2 class="about-title">About Me</h2>
+                    <p>As a Full Stack Software Architect, I thrive on bridging the gap between elegant design and robust, scalable functionality. My journey in web development has been driven by a passion for creating digital experiences that are not just efficient, but genuinely enjoyable to use.</p>
+                    <p>I specialize in modern frameworks and technologies, consistently looking for new ways to make web solutions stand out.</p>
                 </div>
             </div>
         </section>
 
-       <section id="projects" class="projects-section">
-            <h2>My Projects</h2> 
+        <section id="projects" class="projects-section">
+            <h2>My Projects</h2>
             <div class="projects-container">
                 
                 <div class="project-card">
-                    <img src="images/Timeless Blooms.PNG" alt="Screenshot of Timeless Blooms Flowershop E-Commerce website">
-                    <h3>Timeless Blooms <br> Flowershop E-Commerce</h3>
-                    <p>A high-quality e-commerce floral platform ensuring maximum freshness. It provides seamless shopping for stunning, meticulously sourced bouquets for any special event.</p>
-                </div>
-
-                <div class="project-card">
-                    <img src="images/AgriWebsite.PNG" alt="Screenshot of AgriWebsite Educational Website">
-                    <h3>AgriWebsite <br> Educational Website</h3>
+                    <img src="project-agri.jpg" alt="AgriWebsite Thumbnail">
+                    <h3>AgriWebsite Educational Website</h3>
                     <p>A dedicated platform bridging technology and tradition to promote **sustainable farming**. Provides valuable resources and innovative tools for farm efficiency and environmentally friendly practices.</p>
                 </div>
-
+                
                 <div class="project-card">
-                    <img src="images/CRUD.PNG" alt="Screenshot of a generic project interface">
+                    <img src="project-flowers.jpg" alt="Timeless Blooms Thumbnail">
+                    <h3>Timeless Blooms Flowershop E-Commerce</h3>
+                    <p>A high-quality e-commerce floral platform ensuring maximum freshness. It provides seamless shopping for stunning, meticulously sourced bouquets for any special event.</p>
+                </div>
+                
+                <div class="project-card">
+                    <img src="project-inventory.jpg" alt="Inventory System Thumbnail">
                     <h3>Inventory Management System</h3>
-                    <p>A back-end system demonstrating Create, Read, Update, and Delete functionality for managing product inventory and user data in a database.</p>
+                    <p>A back-end system demonstrating Create, Read, Update, and Delete functionality for streamlined stock control and data management.</p>
                 </div>
             </div>
         </section>
+
         <section id="contact" class="contact-section">
-    <h2>Get in Touch</h2> 
-    <p class="contact-intro">
-        Whether you have a project idea, a job opportunity, or just want to say hello, feel free to reach out using the form below!
-    </p>
-
+            <h2>Get in Touch</h2>
+            <p class="contact-intro">
+                Whether you have a project idea, a job opportunity, or just want to say hello, feel free to reach out using the form below!
+            </p>
             <div class="contact-content-wrapper">
-        <div class="contact-image-wrapper">
-           <img src="images/cute_animal.jpg" alt="A cute animal illustration">
-        </div>
-
-    <div class="contact-form-container">
-        <form action="#" method="POST" class="contact-form">
-            
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                <div class="contact-image-wrapper">
+                    <img src="your-contact-image.png" alt="Contact Icon">
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="your.email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" placeholder="Briefly what this is about" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-            </div>
-
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required placeholder="Briefly what this is about">
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or inquiry..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </div>
-</section>
-       
+        </section>
     </main>
+
     <footer class="site-footer">
-        <p>&copy; 2025 Albert Pingol. All Rights Reserved.</p>
+        © 2025 Albert Pingol. All Rights Reserved.
     </footer>
 
     <script>
-        // Existing scroll-to-change-header-color functionality
-        window.addEventListener('scroll', function() {
+        // --- TEXT ANIMATION JAVASCRIPT ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const changingTextContainer = document.querySelector('.changing-text');
+            
+            // 1. Define the roles to cycle through
+            const roles = ["Architect", "Designer", "Developer"];
+            let roleIndex = 0;
+            
+            function animateTextChange() {
+                if (!changingTextContainer) return;
+
+                // 2. Get the current word
+                const currentRole = roles[roleIndex];
+                
+                // 3. Create a new span for the word to apply the animation keyframes
+                const newWordSpan = document.createElement('span');
+                newWordSpan.classList.add('changing-text-word');
+                newWordSpan.textContent = currentRole;
+                
+                // 4. Clear the container and insert the new word
+                changingTextContainer.innerHTML = '';
+                changingTextContainer.appendChild(newWordSpan);
+                
+                // 5. Update index for the next word
+                roleIndex = (roleIndex + 1) % roles.length;
+                
+                // 6. Set the timing for the cycle (2000ms = 2 seconds per word)
+                setTimeout(animateTextChange, 2000); 
+            }
+
+            // Start the animation cycle
+            animateTextChange();
+        });
+
+        // --- NAVBAR SCROLL and MENU TOGGLE JAVASCRIPT (Place your existing JS here) ---
+        // You'll need to add your existing JS for the scrolling navbar and the mobile menu toggle here.
+        // E.g., for the menu toggle:
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // E.g., for closing menu when a link is clicked:
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // E.g., for the scrolled header:
+        window.addEventListener('scroll', () => {
             const header = document.querySelector('.nav-header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -159,66 +192,6 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        // Active Link Highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        const activateLinkOnScroll = () => {
-            let current = '';
-            // Offset for fixed header (must match scroll-padding-top in CSS)
-            const scrollY = window.pageYOffset + 160; 
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-
-            if (current) {
-                const activeLink = document.querySelector(`.nav-links a[href="#${current}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-        };
-
-        window.addEventListener('scroll', activateLinkOnScroll);
-        window.addEventListener('load', activateLinkOnScroll);
-        
-        // NEW: Hamburger Menu Toggle Logic
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navBar = document.querySelector('.nav-links');
-        const allNavLinks = document.querySelectorAll('.nav-links a');
-
-        menuToggle.addEventListener('click', () => {
-            navBar.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked (for mobile UX)
-        allNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Ensure the menu is closed only if it's currently open
-                if (navBar.classList.contains('active')) {
-                    navBar.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
