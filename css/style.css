@@ -15,11 +15,11 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 100px 20px 100px;
+    padding: 10px 100px 10px 100px;
     z-index: 1000;
     background-color: transparent;
     box-shadow: none;
@@ -444,6 +444,7 @@ html {
         text-align: left;
     }
 }
+
 
 
 
